@@ -1,8 +1,9 @@
 package com.corelogic.tech_talk.clean_code.interfaces.helper;
 
-
 import org.apache.commons.lang.StringUtils;
 import org.springframework.http.HttpStatus;
+
+import java.util.Collections;
 
 public enum BlockProductEnum {
 
@@ -57,6 +58,6 @@ public enum BlockProductEnum {
                 return blockProductEnum;
             }
         }
-        throw new BlockProductNotFoundException(HttpStatus.NOT_FOUND.value(), StringUtils.join(blockProductName, " specified in api.features.includeBlocks is invalid."));
+        throw new BlockProductNotFoundException(HttpStatus.NOT_FOUND.value(), StringUtils.join(Collections.singleton(blockProductName), " specified in api.features.includeBlocks is invalid."));
     }
 }
