@@ -15,8 +15,8 @@ import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.client.HttpClientErrorException;
+import com.netflix.graphql.dgs.client.HttpResponse;
 
-import java.net.http.HttpResponse;
 import java.util.Collections;
 import java.util.List;
 
@@ -38,7 +38,7 @@ public class SdpGraphQLService {
                 httpHeaders.setAccept(accept);
                 headers.forEach(httpHeaders::addAll);
                 ResponseEntity<String> exchange = restTemplateConfig.restTemplate().exchange(graphQLUrl, HttpMethod.POST, new HttpEntity<>(body, httpHeaders), String.class);
-                return new HttpResponse(exchange.getStatusCodeValue(), exchange.getBody());
+                return new HttpResponse(exchange.getStatusCode().value(), exchange.getBody());
             });
             String query = graphQLQueryRequest.serialize();
             logger.info("Query: {}", query);
