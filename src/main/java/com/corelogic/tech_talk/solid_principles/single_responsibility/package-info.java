@@ -1,1 +1,0 @@
-package com.corelogic.tech_talk.solid_principles.single_responsibility;
