@@ -8,10 +8,10 @@ package com.corelogic.solid.principles.dependency_inversion.before;
  *
  * Explanation: The Switch class directly depends on the LightBulb class, violating the Dependency Inversion Principle.
  */
-public class Switch {
+public class ElectricSwitch {
     private final LightBulb lightBulb;
 
-    public Switch(LightBulb lightBulb) {
+    public ElectricSwitch(LightBulb lightBulb) {
         this.lightBulb = lightBulb;
     }
 
@@ -21,7 +21,7 @@ public class Switch {
 
     public static void main(String[] args) {
         LightBulb lightBulb = new LightBulb();
-        Switch lightSwitch = new Switch(lightBulb);
-        lightSwitch.operate();
+        ElectricSwitch lightElectricSwitch = new ElectricSwitch(lightBulb);
+        lightElectricSwitch.operate();
     }
 }

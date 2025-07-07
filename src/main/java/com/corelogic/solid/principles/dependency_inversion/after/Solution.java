@@ -9,7 +9,10 @@ package com.corelogic.solid.principles.dependency_inversion.after;
 public class Solution {
     public static void main(String[] args) {
         Switchable lightBulb = new LightBulb();
-        Switch lightSwitch = new Switch(lightBulb);
-        lightSwitch.operate();
+
+        ElectricSwitch lightSwitch = new ElectricSwitch(lightBulb);
+
+        lightSwitch.operate();  // Bulb ON
+        lightSwitch.operate();  // Bulb OFF
     }
 }
