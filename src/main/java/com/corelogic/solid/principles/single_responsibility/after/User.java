@@ -17,3 +17,5 @@ public class User {
         return email;
     }
 }
+
+// consult with Copilot on SOLID principles

@@ -37,6 +37,8 @@ dependencies {
 	implementation "io.swagger:swagger-annotations:1.6.15"
 	implementation "org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.6"    // to render Swagger UI
 
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
+
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 
